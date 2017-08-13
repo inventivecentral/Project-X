@@ -1,5 +1,6 @@
 # Project-X
-## OUR Vertical Machining Center
+## stepper driver DOC
+<img src="images/info01.jpg">
 
 
 
