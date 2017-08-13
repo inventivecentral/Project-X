@@ -1,3 +1,14 @@
+
+/*********************************
+  KEYPAD
+  The circuit:
+  *KEYPAD
+  By author: SIBIN KS
+
+**********************************/
+
+
+
 int keypad()
 {
      int x;

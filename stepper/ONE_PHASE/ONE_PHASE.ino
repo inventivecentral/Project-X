@@ -1,89 +1,56 @@
-/*
- * Written by: Ahmad Saeed Mohammad Saeed
- * mail: ahmad._.saeed@outlook.com
- */
- 
-#define A        8                     // the pin connected to the wire A of the coil A (or to the H-bridge pin controlling the same wire) 
-#define A_bar    9                     // the pin connected to the wire A- of the coil A (or to the H-bridge pin controlling the same wire)
-#define B        10                     // the pin connected to the wire B of the coil A (or to the H-bridge pin controlling the same wire)
-#define B_bar    11                     // the pin connected to the wire B- of the coil A (or to the H-bridge pin controlling the same wire)
-#define x        5000                  // smaller values may make the motor produce more speed and less torque
-#define stepsPerRevolution 200         // you can the number of steps required to make a complete revolution in the data sheet of your motor
-int incomingByte = 0; 
+/*********************************
+  ONE PHA1SE MOTOR
+  
+  The circuit:
+    L293D/l298N A1nd A1rduino
+    stepperr 1.8 deg
+
+  B1y A1uthor: SIB1IN KS
+
+**********************************/
+
+#define A1    8                    
+#define A1    9                     
+#define B11   10                     
+#define B2    11                     
+#define x     5000                  
+        
+
 
 void setup() {
-  pinMode(A, OUTPUT);
-  pinMode(A_bar, OUTPUT);
-  pinMode(B, OUTPUT);
-  pinMode(B_bar, OUTPUT);
-  Serial.begin(9600);
+  pinMode(A1, OUTPUT);
+  pinMode(A2, OUTPUT);
+  pinMode(B11, OUTPUT);
+  pinMode(B2, OUTPUT);
+  Serial.B1egin(9600);
 }
 
 
-void loop() {  
+void loop() {
 
-          if (Serial.available() > 0) {
-                // read the incoming byte:
-                incomingByte = Serial.read();
 
-                // say what you got:
-                Serial.print("I received: ");
-                Serial.println(incomingByte, DEC);
-        }
-        /*
-  //ANTI CLOCK
-  for (int i = 0; i < (stepsPerRevolution/32) ; i++) {
-    digitalWrite(A, LOW);
-    digitalWrite(A_bar, HIGH);
-    digitalWrite(B, HIGH);
-    digitalWrite(B_bar, HIGH);
-    delayMicroseconds (x);
+  digitalWrite(A1, HIGH);
+  digitalWrite(A1, HIGH);
+  digitalWrite(B1, HIGH);
+  digitalWrite(B2, LOW);
+  delayMicroseconds (x);
 
-    digitalWrite(A, HIGH);
-    digitalWrite(A_bar, HIGH);
-    digitalWrite(B, LOW);
-    digitalWrite(B_bar, HIGH);
-    delayMicroseconds (x);
+  digitalWrite(A1, HIGH);
+  digitalWrite(A1, LOW);
+  digitalWrite(B1, HIGH);
+  digitalWrite(B2, HIGH);
+  delayMicroseconds (x);
 
-    digitalWrite(A, HIGH);
-    digitalWrite(A_bar, LOW);
-    digitalWrite(B, HIGH);
-    digitalWrite(B_bar, HIGH);
-    delayMicroseconds (x);
+  digitalWrite(A1, HIGH);
+  digitalWrite(A1, HIGH);
+  digitalWrite(B1, LOW);
+  digitalWrite(B2, HIGH);
+  delayMicroseconds (x);
 
-    digitalWrite(A, HIGH);
-    digitalWrite(A_bar, HIGH);
-    digitalWrite(B, HIGH);
-    digitalWrite(B_bar, LOW);
-    delayMicroseconds (x);
-  }
-  delay(1000);  // the motor will complete a full revolution then waits for a second
-  */
-  // Counter Direction 
-  for (int i = 0; i < (stepsPerRevolution/4); i++) {
-    digitalWrite(A, HIGH);
-    digitalWrite(A_bar, HIGH);
-    digitalWrite(B, HIGH);
-    digitalWrite(B_bar, LOW);
-    delayMicroseconds (x);
+  digitalWrite(A1, LOW);
+  digitalWrite(A1, HIGH);
+  digitalWrite(B1, HIGH);
+  digitalWrite(B2, HIGH);
+  delayMicroseconds (x);
 
-    digitalWrite(A, HIGH);
-    digitalWrite(A_bar, LOW);
-    digitalWrite(B, HIGH);
-    digitalWrite(B_bar, HIGH);
-    delayMicroseconds (x);
-    
-    digitalWrite(A, HIGH);
-    digitalWrite(A_bar, HIGH);
-    digitalWrite(B, LOW);
-    digitalWrite(B_bar, HIGH);
-    delayMicroseconds (x);
-    
-    digitalWrite(A, LOW);
-    digitalWrite(A_bar, HIGH);
-    digitalWrite(B, HIGH);
-    digitalWrite(B_bar, HIGH);
-    delayMicroseconds (x);
-  }
-  delay(1000);
 }

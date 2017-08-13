@@ -1,7 +1,11 @@
-/*
- * Written by: Ahmad Saeed Mohammad Saeed
- * mail: ahmad._.saeed@outlook.com
- */
+/*********************************
+TWO PHASE
+  The circuit:
+  *L293D
+  *ARDUINO
+  By author: SIBIN KS
+
+**********************************/
  
 #define A        8                     // the pin connected to the wire A of the coil A (or to the H-bridge pin controlling the same wire) 
 #define A_bar    9                     // the pin connected to the wire A- of the coil A (or to the H-bridge pin controlling the same wire)

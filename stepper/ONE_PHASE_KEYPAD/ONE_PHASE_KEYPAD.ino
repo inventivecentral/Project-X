@@ -1,17 +1,20 @@
-/*
- * Written by: Ahmad Saeed Mohammad Saeed
- * mail: ahmad._.saeed@outlook.com
- */
- 
+/*********************************
+ONE PHASE STEPPING WITH KEYPAD
+  The circuit:
+  * L293D/l298N and Arduino
+  * stepperr 1.8 deg
+  * 
+  By author: SIBIN KS
+
+**********************************/
 
 
 
-#define A        8                     // the pin connected to the wire A of the coil A (or to the H-bridge pin controlling the same wire) 
-#define A_bar    9                     // the pin connected to the wire A- of the coil A (or to the H-bridge pin controlling the same wire)
-#define B        10                     // the pin connected to the wire B of the coil A (or to the H-bridge pin controlling the same wire)
-#define B_bar    11                     // the pin connected to the wire B- of the coil A (or to the H-bridge pin controlling the same wire)
-              // smaller values may make the motor produce more speed and less torque
-#define stepsPerRevolution 200         // you can the number of steps required to make a complete revolution in the data sheet of your motor
+#define A        8                     
+#define A_bar    9                     
+#define B        10                
+#define B_bar    11                    
+            
 
 int x= 5000;
 int RIGHT_KEY;
