@@ -1,56 +1,53 @@
 /*********************************
-  ONE PHA1SE MOTOR
+  ONE PHASE MOTOR
   
   The circuit:
-    L293D/l298N A1nd A1rduino
+    L293D/l298N And Arduino
     stepperr 1.8 deg
 
-  B1y A1uthor: SIB1IN KS
+  By Author: SICIN KS
 
 **********************************/
-
-#define A1    8                    
-#define A1    9                     
-#define B11   10                     
-#define B2    11                     
-#define x     5000                  
+int A=8; int B=9; int C=10; int D=11;
+                   
+int x   =  5000;                  
         
 
 
 void setup() {
-  pinMode(A1, OUTPUT);
-  pinMode(A2, OUTPUT);
-  pinMode(B11, OUTPUT);
-  pinMode(B2, OUTPUT);
-  Serial.B1egin(9600);
+  pinMode(A, OUTPUT);
+  pinMode(B, OUTPUT);
+  pinMode(C, OUTPUT);
+  pinMode(D, OUTPUT);
+  Serial.begin(9600);
 }
 
 
 void loop() {
 
 
-  digitalWrite(A1, HIGH);
-  digitalWrite(A1, HIGH);
-  digitalWrite(B1, HIGH);
-  digitalWrite(B2, LOW);
+  digitalWrite(A, HIGH);
+  digitalWrite(B, HIGH);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, LOW);
   delayMicroseconds (x);
 
-  digitalWrite(A1, HIGH);
-  digitalWrite(A1, LOW);
-  digitalWrite(B1, HIGH);
-  digitalWrite(B2, HIGH);
+  digitalWrite(A, HIGH);
+  digitalWrite(B, LOW);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, HIGH);
   delayMicroseconds (x);
 
-  digitalWrite(A1, HIGH);
-  digitalWrite(A1, HIGH);
-  digitalWrite(B1, LOW);
-  digitalWrite(B2, HIGH);
+  digitalWrite(A, HIGH);
+  digitalWrite(B, HIGH);
+  digitalWrite(C, LOW);
+  digitalWrite(D, HIGH);
   delayMicroseconds (x);
 
-  digitalWrite(A1, LOW);
-  digitalWrite(A1, HIGH);
-  digitalWrite(B1, HIGH);
-  digitalWrite(B2, HIGH);
+  digitalWrite(A, LOW);
+  digitalWrite(B, HIGH);
+  digitalWrite(C, HIGH);
+  digitalWrite(D, HIGH);
   delayMicroseconds (x);
 
 }

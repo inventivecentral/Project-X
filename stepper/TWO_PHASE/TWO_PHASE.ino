@@ -1,52 +1,54 @@
 /*********************************
-TWO PHASE
+TWO PHASE stepper
   The circuit:
   *L293D
   *ARDUINO
-  By author: SIBIN KS
+  By author: SICIN KS
 
 **********************************/
  
-#define A        8                     // the pin connected to the wire A of the coil A (or to the H-bridge pin controlling the same wire) 
-#define A_bar    9                     // the pin connected to the wire A- of the coil A (or to the H-bridge pin controlling the same wire)
-#define B        10                     // the pin connected to the wire B of the coil A (or to the H-bridge pin controlling the same wire)
-#define B_bar    11                     // the pin connected to the wire B- of the coil A (or to the H-bridge pin controlling the same wire)
-#define x        5000                  // smaller values may make the motor produce more speed and less torque
-#define stepsPerRevolution 200         // you can the number of steps required to make a complete revolution in the data sheet of your motor
+int A=8;                     
+int B=9;                    
+int C=10;                    
+int D=11; 
+
+                    
+int x=5000;                  
+int stepsPerRevolution = 200;         
 
 
 void setup() {
   pinMode(A, OUTPUT);
-  pinMode(A_bar, OUTPUT);
   pinMode(B, OUTPUT);
-  pinMode(B_bar, OUTPUT);
+  pinMode(C, OUTPUT);
+  pinMode(D, OUTPUT);
 }
 
 
 void loop() {  
   for (int i = 0; i < (stepsPerRevolution/4) ; i++) {
     digitalWrite(A, LOW);
-    digitalWrite(A_bar, HIGH);
     digitalWrite(B, HIGH);
-    digitalWrite(B_bar, LOW);
+    digitalWrite(C, HIGH);
+    digitalWrite(D, LOW);
     delayMicroseconds (x);
 
     digitalWrite(A, HIGH);
-    digitalWrite(A_bar, LOW);
-    digitalWrite(B, HIGH);
-    digitalWrite(B_bar, LOW);
-    delayMicroseconds (x);
-
-    digitalWrite(A, HIGH);
-    digitalWrite(A_bar, LOW);
     digitalWrite(B, LOW);
-    digitalWrite(B_bar, HIGH);
+    digitalWrite(C, HIGH);
+    digitalWrite(D, LOW);
+    delayMicroseconds (x);
+
+    digitalWrite(A, HIGH);
+    digitalWrite(B, LOW);
+    digitalWrite(C, LOW);
+    digitalWrite(D, HIGH);
     delayMicroseconds (x);
 
     digitalWrite(A, LOW);
-    digitalWrite(A_bar, HIGH);
-    digitalWrite(B, LOW);
-    digitalWrite(B_bar, HIGH);
+    digitalWrite(B, HIGH);
+    digitalWrite(C, LOW);
+    digitalWrite(D, HIGH);
     delayMicroseconds (x);
   }
     delay(1000);
@@ -54,28 +56,28 @@ void loop() {
   for (int i = 0; i < (stepsPerRevolution/4); i++) {
 
     digitalWrite(A, LOW);
-    digitalWrite(A_bar, HIGH);
-    digitalWrite(B, LOW);
-    digitalWrite(B_bar, HIGH);
+    digitalWrite(B, HIGH);
+    digitalWrite(C, LOW);
+    digitalWrite(D, HIGH);
     delayMicroseconds (x);
     
     digitalWrite(A, HIGH);
-    digitalWrite(A_bar, LOW);
     digitalWrite(B, LOW);
-    digitalWrite(B_bar, HIGH);
+    digitalWrite(C, LOW);
+    digitalWrite(D, HIGH);
     delayMicroseconds (x);
     
 
     digitalWrite(A, HIGH);
-    digitalWrite(A_bar, LOW);
-    digitalWrite(B, HIGH);
-    digitalWrite(B_bar, LOW);
+    digitalWrite(B, LOW);
+    digitalWrite(C, HIGH);
+    digitalWrite(D, LOW);
     delayMicroseconds (x);
 
     digitalWrite(A, LOW);
-    digitalWrite(A_bar, HIGH);
     digitalWrite(B, HIGH);
-    digitalWrite(B_bar, LOW);
+    digitalWrite(C, HIGH);
+    digitalWrite(D, LOW);
     delayMicroseconds (x);
   }
   delay(1000);
