@@ -1,9 +1,11 @@
 /*********************************
-TWO PHASE stepper
+TWO PHASE MOTOR
+  
   The circuit:
-  *L293D
-  *ARDUINO
-  By author: SICIN KS
+    L293D/l298N And Arduino
+    stepperr 1.8 deg
+
+  By Author: SIBIN KS
 
 **********************************/
  

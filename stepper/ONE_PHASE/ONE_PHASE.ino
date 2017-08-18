@@ -5,7 +5,7 @@
     L293D/l298N And Arduino
     stepperr 1.8 deg
 
-  By Author: SICIN KS
+  By Author: SIBIN KS
 
 **********************************/
 int A=8; int B=9; int C=10; int D=11;

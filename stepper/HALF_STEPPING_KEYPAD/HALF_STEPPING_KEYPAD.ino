@@ -1,13 +1,13 @@
 /*********************************
- HALF STEPPING WITH KEYPAD
+HALF STEPPING WITH KEYPAD
+  
   The circuit:
-  * L293D/l298N and Arduino
-  * stepperr 1.8 deg
-  * 
-  By author: SICIN KS
+    L293D/l298N And Arduino
+    stepperr 1.8 deg
+
+  By Author: SIBIN KS
 
 **********************************/
-
 int RIGHT_KEY;
 int LEFT_KEY;
 int UP_KEY;
